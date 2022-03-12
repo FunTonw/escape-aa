@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.css' integrity='sha512-c9N/Xq0n4rQdyCXF4RgrRYAAOSnNJDp8NWILsSUx+33zWyaMbXXvqajgO0UXybRdTGVpxq3FBrcGwabkWsT8OA==' crossorigin='anonymous'/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="form row">
+          <h2 class="form-title">六角西餐廳</h2>
+          <div class="mt-2">
+            <labal class="from-labal" for="name">姓名</labal>
+            <input type="text" name="name" id="name" class="form-control rounded-0">
+        </div>
+        <div class="mt-2">
+          <labal class="from-labal" for="tel">電話</labal>
+          <input type="tel" name="tel" id="tel" class="form-control rounded-0">
+        </div>
+        <div class="mt-2">
+          <labal class="from-labal" for="date">日期</labal>
+          <input type="date" name="date" id="date" class="form-control rounded-0"  value="none">
+        </div>
+        <div class="mt-2">
+          <labal class="from-labal" for="count">用餐人數</labal>
+          <select name="count" id="count" class="form-select rounded-0">
+              <option selected></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+          </select>
+        </div>
+        <div class="mt-2">
+            <div class="form-check">
+                <input type="checkbox" name="kid-chair" id="kid-chair" class="form-check-input">
+                <label for="kid-chair" class="form-chec-label">需要兒童座椅</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" name="veggie" id="veggie" class="form-check-input">
+              <label for="veggie" class="form-chec-label">需要素食</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" name="smoke" id="smoke" class="form-check-input">
+              <label for="smoke" class="form-chec-label">吸菸區</label>
+            </div>
+        </div>
+        <div>
+            <div class="btn btn-dark rounded-0" type="submit">送出</div>  
+        </div>
+  </div>  
+</body>
+</html>
