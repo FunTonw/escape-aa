@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+</head>
+<body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data-10-year-range.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.9.1/axios.js' integrity='sha512-Kg0CewqPNO/ziOJuCq5eyl3P/V6OLz/Lb1I2m+yKS3lHZcGVFN/KOew18rWP+kTsL7haYdaqGjwHQCZrN0heLQ==' crossorigin='anonymous'></script>
+    <script>
+        let api = 'https://hex-escape-room.herokuapp.com/api/news/v1/data';
+        let data = [];
+        (async function (){
+        await axios.get(api)
+          .then((res) => {
+              data = res.data.articles;
+              console.log(data);
+              reTime(data);
+          })
+          postApi(data);
+        })();
+
+        function reTime(data) {
+            data.forEach(i => {
+                i["publishedAt"] = moment(i["publishedAt"]).tz(i['iana']).format('YYYY-MM-DD HH:mm:ss');
+            });
+        }
+        function postApi(data) {
+            let postData = {
+                "data": data
+            }
+            axios.post(api, postData)
+              .then((res)=>{
+                  console.log(res.data);
+              })
+        };
+    </script>
+</body>
+</html>
